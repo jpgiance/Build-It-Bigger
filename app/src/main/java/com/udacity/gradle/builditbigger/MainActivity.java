@@ -1,8 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +14,7 @@ import com.jorgegiance.jokes.Joker;
 import com.jorgegiance.displayview.DisplayActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnJokerTaskCompleted{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +47,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
       //  Toast.makeText(this, Joker.getJoke(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, DisplayActivity.class);
-        intent.putExtra("JOKE_KEY", Joker.getJoke());
-        startActivity(intent);
+        new EndpointsAsyncTask().execute(this);
+
     }
 
 
+    @Override
+    public void onTaskCompleted( String response ) {
+        Intent intent = new Intent(this, DisplayActivity.class);
+        intent.putExtra("JOKE_KEY", response);
+        startActivity(intent);
+    }
+
+    @Override
+    public void preExecute() {
+
+    }
 }

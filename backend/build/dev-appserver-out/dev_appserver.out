@@ -1,27 +1,22 @@
-Mar 12, 2020 4:49:08 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+Mar 13, 2020 3:06:45 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
 INFO: Overwriting system property key 'java.util.logging.config.file', value 'C:\Users\jorgepg\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'C:\Users\jorgepg\Documents\Code\Android\Projects\Audacity_Android_Nanodegree\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
-2020-03-12 16:49:08.458:INFO::main: Logging initialized @324ms to org.eclipse.jetty.util.log.StdErrLog
-2020-03-12 16:49:08.494:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
-Mar 12, 2020 9:49:08 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+2020-03-13 15:06:45.585:INFO::main: Logging initialized @337ms to org.eclipse.jetty.util.log.StdErrLog
+2020-03-13 15:06:45.622:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
+Mar 13, 2020 8:06:45 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
 WARNING: Your working directory, (C:\Users\jorgepg\Documents\Code\Android\Projects\Audacity_Android_Nanodegree\FinalProject\backend) is not equal to your 
 web application root (C:\Users\jorgepg\Documents\Code\Android\Projects\Audacity_Android_Nanodegree\FinalProject\backend\build\exploded-backend)
 You will not be able to access files from your working directory on the production server.
 
-2020-03-12 16:49:08.693:INFO:oejs.Server:main: jetty-9.4.24.v20191120; built: 2019-11-20T21:37:49.771Z; git: 363d5f2df3a8a28de40604320230664b9c793c16; jvm 1.8.0_212-release-1586-b04
-2020-03-12 16:49:08.926:INFO:oeju.TypeUtil:main: JVM Runtime does not support Modules
-2020-03-12 16:49:09.042:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@5f8e8a9d{/,file:///C:/Users/jorgepg/Documents/Code/Android/Projects/Audacity_Android_Nanodegree/FinalProject/backend/build/exploded-backend/,AVAILABLE}{C:\Users\jorgepg\Documents\Code\Android\Projects\Audacity_Android_Nanodegree\FinalProject\backend\build\exploded-backend}
-2020-03-12 16:49:09.042:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
-2020-03-12 16:49:09.042:INFO:oejs.session:main: node0 Scavenging disabled
-2020-03-12 16:49:09.053:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@6f1fba17{HTTP/1.1,[http/1.1]}{localhost:8080}
-2020-03-12 16:49:09.053:INFO:oejs.Server:main: Started @920ms
-Mar 12, 2020 9:49:09 PM com.google.appengine.tools.development.AbstractModule startup
+2020-03-13 15:06:45.823:INFO:oejs.Server:main: jetty-9.4.24.v20191120; built: 2019-11-20T21:37:49.771Z; git: 363d5f2df3a8a28de40604320230664b9c793c16; jvm 1.8.0_212-release-1586-b04
+2020-03-13 15:06:46.065:INFO:oeju.TypeUtil:main: JVM Runtime does not support Modules
+2020-03-13 15:06:46.172:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@3cce5371{/,file:///C:/Users/jorgepg/Documents/Code/Android/Projects/Audacity_Android_Nanodegree/FinalProject/backend/build/exploded-backend/,AVAILABLE}{C:\Users\jorgepg\Documents\Code\Android\Projects\Audacity_Android_Nanodegree\FinalProject\backend\build\exploded-backend}
+2020-03-13 15:06:46.173:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2020-03-13 15:06:46.173:INFO:oejs.session:main: node0 Scavenging disabled
+2020-03-13 15:06:46.183:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@6f1fba17{HTTP/1.1,[http/1.1]}{localhost:8080}
+2020-03-13 15:06:46.183:INFO:oejs.Server:main: Started @934ms
+Mar 13, 2020 8:06:46 PM com.google.appengine.tools.development.AbstractModule startup
 INFO: Module instance default is running at http://localhost:8080/
-Mar 12, 2020 9:49:09 PM com.google.appengine.tools.development.AbstractModule startup
+Mar 13, 2020 8:06:46 PM com.google.appengine.tools.development.AbstractModule startup
 INFO: The admin console is running at http://localhost:8080/_ah/admin
-Mar 12, 2020 4:49:09 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+Mar 13, 2020 3:06:46 PM com.google.appengine.tools.development.DevAppServerImpl doStart
 INFO: Dev App Server is now running
-2020-03-12 16:49:20.136:INFO:oejs.AbstractConnector:pool-1-thread-1: Stopped NetworkTrafficSelectChannelConnector@6f1fba17{HTTP/1.1,[http/1.1]}{localhost:8080}
-2020-03-12 16:49:20.139:INFO:oejsh.ContextHandler:pool-1-thread-1: Stopped c.g.a.t.d.j.DevAppEngineWebAppContext@5f8e8a9d{/,file:///C:/Users/jorgepg/Documents/Code/Android/Projects/Audacity_Android_Nanodegree/FinalProject/backend/build/exploded-backend/,UNAVAILABLE}{C:\Users\jorgepg\Documents\Code\Android\Projects\Audacity_Android_Nanodegree\FinalProject\backend\build\exploded-backend}
-Mar 12, 2020 4:49:20 PM com.google.appengine.tools.development.AbstractModule shutdown
-INFO: Shutting down module instance default
-Shutting down.
