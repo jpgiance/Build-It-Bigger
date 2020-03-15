@@ -31,6 +31,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -49,5 +57,14 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    // Required for local unit tests (JUnit 4 framework)
     testImplementation 'junit:junit:4.12'
+
+    // Required for instrumented tests
+    androidTestImplementation 'com.android.support:support-annotations:24.0.0'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+
+    def lifecycle_version = "1.2.0"
+   // implementation "androidx.test:core:$lifecycle_version"
+
 }
