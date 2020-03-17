@@ -19,4 +19,13 @@ allprojects {
         jcenter()
         google()
     }
+
+
+    task runCustomTest { dependsOn ":backend:appengineStart", ":app:connectedCheck"
+        mustRunAfter ":backend:appengineStart"
+        finalizedBy ":backend:appengineStop"
+        doLast {
+            println "Task runCustomTest completed"
+        }
+    }
 }

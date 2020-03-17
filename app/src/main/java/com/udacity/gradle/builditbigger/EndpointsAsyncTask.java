@@ -1,9 +1,8 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
+
 import android.os.AsyncTask;
-import android.util.Pair;
-import android.widget.Toast;
+import android.os.SystemClock;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -13,13 +12,23 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-public class EndpointsAsyncTask extends AsyncTask<OnJokerTaskCompleted, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
 
     private OnJokerTaskCompleted activity;
 
+    public EndpointsAsyncTask( OnJokerTaskCompleted activity ) {
+        this.activity = activity;
+    }
+
+
     @Override
-    protected String doInBackground(OnJokerTaskCompleted... params) {
+    protected void onPreExecute() {
+        activity.onTaskInit();
+    }
+
+    @Override
+    protected String doInBackground(Void... voids) {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -38,8 +47,8 @@ public class EndpointsAsyncTask extends AsyncTask<OnJokerTaskCompleted, Void, St
             myApiService = builder.build();
         }
 
+        SystemClock.sleep(1000);
 
-        activity = (OnJokerTaskCompleted) params[0];
 
         try {
             return myApiService.sayJoke().execute().getData();
@@ -50,7 +59,7 @@ public class EndpointsAsyncTask extends AsyncTask<OnJokerTaskCompleted, Void, St
 
     @Override
     protected void onPostExecute(String result) {
-       // Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+
         activity.onTaskCompleted(result);
 
     }
