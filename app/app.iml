@@ -183,5 +183,11 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-gass-license:11.8.0@aar" level="project" />
     <orderEntry type="module" module-name="displayview" />
     <orderEntry type="module" module-name="jokes" />
+    <orderEntry type="module" module-name="displayview" />
+    <orderEntry type="module" module-name="jokes" />
+    <orderEntry type="module" module-name="displayview" />
+    <orderEntry type="module" module-name="jokes" />
+    <orderEntry type="module" module-name="displayview" />
+    <orderEntry type="module" module-name="jokes" />
   </component>
 </module>
