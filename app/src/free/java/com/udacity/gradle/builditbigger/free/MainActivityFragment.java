@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.AdListener;
@@ -64,7 +65,7 @@ public class MainActivityFragment extends Fragment implements OnJokerTaskComplet
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         setInterstialListener();
 
-        
+
         return root;
     }
 
@@ -113,9 +114,13 @@ public class MainActivityFragment extends Fragment implements OnJokerTaskComplet
     @Override
     public void onTaskCompleted( String response ) {
         spinner.setVisibility(View.GONE);
-        Intent intent = new Intent(context, DisplayActivity.class);
-        intent.putExtra(context.getString(R.string.joke_key), response);
-        startActivity(intent);
+        if (response != null){
+            Intent intent = new Intent(context, DisplayActivity.class);
+            intent.putExtra(context.getString(R.string.joke_key), response);
+            startActivity(intent);
+        }else {
+            Toast.makeText(context, "Server was not found", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

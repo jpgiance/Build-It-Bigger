@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.jorgegiance.displayview.DisplayActivity;
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
@@ -38,7 +39,7 @@ public class MainActivityFragment extends Fragment implements OnJokerTaskComplet
 
         jokerButton = (Button) root.findViewById(R.id.joker_button);
         setJokerButtonListener();
-        
+
         return root;
     }
 
@@ -52,9 +53,15 @@ public class MainActivityFragment extends Fragment implements OnJokerTaskComplet
     @Override
     public void onTaskCompleted( String response ) {
         spinner.setVisibility(View.GONE);
-        Intent intent = new Intent(context, DisplayActivity.class);
-        intent.putExtra(context.getString(R.string.joke_key), response);
-        startActivity(intent);
+
+        if (response != null){
+            Intent intent = new Intent(context, DisplayActivity.class);
+            intent.putExtra(context.getString(R.string.joke_key), response);
+            startActivity(intent);
+        }else {
+            Toast.makeText(context, "Server was not found", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
@@ -67,7 +74,7 @@ public class MainActivityFragment extends Fragment implements OnJokerTaskComplet
             @Override
             public void onClick( View view ) {
 
-                    tellJoke();
+                tellJoke();
 
             }
         });

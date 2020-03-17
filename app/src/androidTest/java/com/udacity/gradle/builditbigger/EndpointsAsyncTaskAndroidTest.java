@@ -22,7 +22,7 @@ public class EndpointsAsyncTaskAndroidTest {
             @Override
             public void onTaskCompleted( String response ) {
 
-                assertTrue(response.length() > 0);
+                assertTrue(!response.isEmpty());
                 latch.countDown();
             }
 
